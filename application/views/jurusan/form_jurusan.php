@@ -1,4 +1,8 @@
 <div class="container-fluid">
+	<div class="alert alert-success" role="alert">
+	  <i class="fas fa-university"></i>
+	  <?php echo $alert; ?>
+  </div>
 	<form method="post" action="<?php echo base_url(); ?>jurusan/aksi_input">
 		<div class="form-group">
 			<label for="jurusan">Kode Jurusan</label>

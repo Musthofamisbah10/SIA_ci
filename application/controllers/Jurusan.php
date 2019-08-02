@@ -23,7 +23,7 @@ class Jurusan extends CI_Controller{
 		);
 
 		$data['judul'] = 'Jurusan';
-		$data['alert'] = 'Jurusan';
+		$data['alert'] = 'Form Tambah Jurusan';
 
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
@@ -69,4 +69,64 @@ class Jurusan extends CI_Controller{
 		$this->form_validation->set_rules('nama_jurusan', 'nama jurusan', 'required', ['required' => 'Nama jurusan wajib diisi']);
 	}
 
+	public function update($id)
+	{
+		$where = array('id_jurusan' => $id);
+		$data['jurusan'] = $this->jurusan_model->edit_data($where, 'jurusan')->result();
+			$data['judul'] = 'Form Update Jurusan';
+		$data['alert'] = 'Form Update Jurusan';
+
+		$this->load->view('templates_admin/header', $data);
+		$this->load->view('templates_admin/sidebar');
+		$this->load->view('jurusan/update_jurusan', $data);
+		$this->load->view('templates_admin/footer_copyR');
+		$this->load->view('templates_admin/footer');
+	}
+
+	public function update_aksi()
+	{
+		$id = $this->input->post('id_jurusan');
+		$kode_jurusan = $this->input->post('kode_jurusan');
+		$nama_jurusan = $this->input->post('nama_jurusan');
+
+		// lalu di masukkan ke variabel data
+		$data = array(
+			'kode_jurusan'	=> $kode_jurusan,
+			'nama_jurusan'	=>	$nama_jurusan
+		);
+
+
+		 // mengubah id menjadi arry
+		$where = array('id_jurusan' => $id);
+
+		// memasukan data ke tabel melalui jurusa_model
+		$this->jurusan_model->update_data($where, $data, 'jurusan'); //variabel dan nama tabel
+		$this->session->set_flashdata('pesan', '<div class="alert alert-success
+								alert-dismissible
+									fade show" role="alert">
+									  Data Jurusan Berhasil Update
+									  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									  </button>
+									</div>');
+		redirect('jurusan');
+	}
+
+	public function delete($id)
+	{
+		// id di tangkap dan di masukan di variabel where
+		$where = array('id_jurusan' => $id);
+		$data = $this->jurusan_model->hapus_data($where, 'jurusan');
+
+		// redirect ke halamn jurusan
+		$this->session->set_flashdata('pesan', '<div class="alert alert-danger
+								alert-dismissible
+									fade show" role="alert">
+									  Data Jurusan Berhasil Hapus
+									  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									  </button>
+									</div>');
+		redirect('jurusan');
+	}
 }
