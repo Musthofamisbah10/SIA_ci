@@ -41,9 +41,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Sub - Akademik:</h6>
-            <a class="collapse-item" href="<?php echo base_url(); ?>jurusan">Jurusan</a>
-            <a class="collapse-item" href="cards.html">Program Studi</a>
-            <a class="collapse-item" href="buttons.html">Mata Kuliah</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>jurusan">Fakultas</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>prodi">Program Studi</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>matakuliah">Mata Kuliah</a>
             <a class="collapse-item" href="cards.html">Mahasiswa</a>
             <a class="collapse-item" href="buttons.html">Tahun Akademik</a>
             <a class="collapse-item" href="cards.html">KRS</a>
