@@ -6,10 +6,11 @@
   	
   	<?php foreach ($jurusan as $jrs): ?>
   			<form action="<?php echo base_url(); ?>jurusan/update_aksi" method="post">
+          <input type="hidden" name="id_jurusan" value="<?php echo $jrs->id_jurusan ?>">
   				<div class="form-groub">
   					<label for="kode_jurusan">Kode Jurusan</label>
   					<!-- input hidden, karna tidak perlu untuk di tampilkan -->
-  					<input type="hidden" name="kode_jurusan" value="<?php echo $jrs->id_jurusan ?>">
+  					<input type="hidden" name="kode_jurusan" value="<?php echo $jrs->kode_jurusan ?>">
   					<input type="text" name="kode_jurusan" class="form-control" value="<?php echo $jrs->kode_jurusan; ?>">
   				</div>
   				<div class="form-groub">

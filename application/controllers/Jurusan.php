@@ -100,7 +100,7 @@ class Jurusan extends CI_Controller{
 		$where = array('id_jurusan' => $id);
 
 		// memasukan data ke tabel melalui jurusa_model
-		$this->jurusan_model->update_data($where, $data, 'jurusan'); //variabel dan nama tabel
+		$input = $this->jurusan_model->update_data($where, $data, 'jurusan'); //variabel dan nama tabel
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success
 								alert-dismissible
 									fade show" role="alert">

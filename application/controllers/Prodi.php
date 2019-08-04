@@ -19,7 +19,7 @@ class Prodi extends CI_Controller{
 		$data['alert'] = 'Tambah Program Studi';
 		$data['judul'] = 'Tambah Program Studi';
 		// karna mengambil nama jurusan dari tabel jurusan
-		$data['jurusan'] = $this->prodi_model->tampil_data('jurusan')->result();
+		$data['jurusan'] = $this->jurusan_model->tampil_data('jurusan')->result();
 
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');

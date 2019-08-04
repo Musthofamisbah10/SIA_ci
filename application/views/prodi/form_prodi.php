@@ -21,7 +21,7 @@
   		<select name="nama_jurusan" class="form-control">
   			<option>-- Pilih Jurusan --</option>
   			<?php foreach ($jurusan as $jrs): ?>
-  				<option value="<?php echo $jrs->nama_jurusan ?>"><?php echo $jrs->nama_jurusan ?></option>
+  				<option value="<?php echo $jrs->id_jurusan ?>"><?php echo $jrs->nama_jurusan ?></option>
   			<?php endforeach; ?>
   		</select>
   	</div>
