@@ -18,8 +18,9 @@ class Prodi extends CI_Controller{
 	{
 		$data['alert'] = 'Tambah Program Studi';
 		$data['judul'] = 'Tambah Program Studi';
-		// karna mengambil nama jurusan dari tabel jurusan
-		$data['jurusan'] = $this->jurusan_model->tampil_data('jurusan')->result();
+
+		// get nama jurusan menggunakan degan jurusan model
+		$data['jurusan'] = $this->prodi_model->getJurusan('jurusan')->result();
 
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
@@ -36,17 +37,19 @@ class Prodi extends CI_Controller{
 			// Apabila datanya FALSE akan di kembalikan ke fungsi Input()
 			$this->input();
 		}else{
+
 			// apabila data nya TRUE maka akan di inputkan datanya ke tabel
 			$kode_prodi 	= $this->input->post('kode_prodi');
 			$nama_prodi 	= $this->input->post('nama_prodi');
-			$nama_jurusan	= $this->input->post('nama_jurusan');
+			$id_jurusan		= $this->input->post('id_jurusan');
 
 			// data di tampung dalam array
 			$data = array(
-				'kode_prodi'		=>	$kode_prodi,
-				'nama_prodi'		=>	$nama_prodi,
-				'nama_jurusan'		=>	$nama_jurusan
-			);
+					'kode_prodi'		=>	$kode_prodi,
+					'nama_prodi'		=>	$nama_prodi,
+					'id_jurusan'		=>	$id_jurusan
+
+				);
 
 			// insert data ke tabel
 			$this->prodi_model->insert_data($data, 'prodi');
@@ -66,9 +69,10 @@ class Prodi extends CI_Controller{
 
 	public function _rules()
 	{
+		// set rules validation
 		$this->form_validation->set_rules('kode_prodi', 'kode prodi', 'required', ['required' => 'Kode prodi wajib diisi']);
 		$this->form_validation->set_rules('nama_prodi', 'nama prodi', 'required', ['required' => 'Nama prodi wajib diisi']);
-		$this->form_validation->set_rules('nama_jurusan', 'nama jurusan', 'required', ['required' => 'Nama jurusan wajib diisi']);
+		$this->form_validation->set_rules('id_jurusan', 'nama jurusan', 'required', ['required' => 'Nama jurusan wajib diisi']);
 	}
 
 }
