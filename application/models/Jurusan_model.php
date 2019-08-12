@@ -2,9 +2,9 @@
 
 class Jurusan_model extends CI_Model{
 
-	public function tampil_data()
+	public function getAllJurusan()
 	{
-		return $this->db->get('jurusan');
+		return $this->db->get('jurusan')->result();
 	}
 
 	public function input_data($data)

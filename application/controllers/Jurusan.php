@@ -4,7 +4,7 @@ class Jurusan extends CI_Controller{
 
 	public function index()
 	{
-		$data['jurusan'] = $this->jurusan_model->tampil_data()->result();
+		$data['jurusan'] = $this->jurusan_model->getAllJurusan();
 		$data['judul'] = 'Jurusan';
 		$data['alert'] = 'Jurusan';
 		$this->load->view('templates_admin/header', $data);
@@ -94,7 +94,6 @@ class Jurusan extends CI_Controller{
 			'kode_jurusan'	=> $kode_jurusan,
 			'nama_jurusan'	=>	$nama_jurusan
 		);
-
 
 		 // mengubah id menjadi arry
 		$where = array('id_jurusan' => $id);
