@@ -23,9 +23,9 @@
   			<td><?php echo $matkul->kode_matakuliah ?></td>
   			<td><?php echo $matkul->nama_matakuliah ?></td>
   			<td><?php echo $matkul->nama_prodi ?></td>
-        <td width="20px"><?php echo anchor('matakuiah/detile' . $matkul->kode_matakuliah, '<div class="btn btn-sm btn-info"><i class="fa fa-eye"></i></div>'); ?></td>
-  			<td width="20px"><?php echo anchor('matakuiah/update' . $matkul->kode_matakuliah, '<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>'); ?></td>
-  			<td width="20px"><?php echo anchor('matakuliah/delete' . $matkul->kode_matakuliah, '<div class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></div>'); ?></td>
+        <td width="20px"><?php echo anchor('matakuliah/detile/' . $matkul->kode_matakuliah, '<div class="btn btn-sm btn-info"><i class="fa fa-eye"></i></div>'); ?></td>
+  			<td width="20px"><?php echo anchor('matakuliah/edit/' . $matkul->kode_matakuliah, '<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>'); ?></td>
+  			<td width="20px"><?php echo anchor('matakuliah/delete/' . $matkul->kode_matakuliah, '<div class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></div>'); ?></td>
   		</tr>
   	<?php endforeach; ?>
   </table>
