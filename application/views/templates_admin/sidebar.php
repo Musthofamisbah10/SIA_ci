@@ -44,8 +44,8 @@
             <a class="collapse-item" href="<?php echo base_url(); ?>jurusan">Fakultas</a>
             <a class="collapse-item" href="<?php echo base_url(); ?>prodi">Program Studi</a>
             <a class="collapse-item" href="<?php echo base_url(); ?>matakuliah">Mata Kuliah</a>
-            <a class="collapse-item" href="cards.html">Mahasiswa</a>
-            <a class="collapse-item" href="buttons.html">Tahun Akademik</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>mahasiswa">Mahasiswa</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>tahun_akademik">Tahun Akademik</a>
             <a class="collapse-item" href="cards.html">KRS</a>
             <a class="collapse-item" href="buttons.html">Input Nilai</a>
             <a class="collapse-item" href="cards.html">KHS</a>
